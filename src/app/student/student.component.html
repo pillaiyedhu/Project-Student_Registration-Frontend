@@ -1,0 +1,60 @@
+
+<div class="container mt-4">
+    <h3>Student Registration</h3>
+<div class="card">
+
+<form>
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="text" [(ngModel)]="id" [ngModelOptions]="{standalone: true}"class="form-control" id="id" name="id" placeholder="Enter ID">  
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"class="form-control" id="name" name="name" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"class="form-control" id="email" name="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}"class="form-control" id="phone" name="phone" placeholder="Phone Number">
+    </div>
+    <button type="submit" class="btn btn-primary mt-4" (click)="register()" >Submit</button>
+  </form>
+</div>
+</div>
+
+<div>
+ 
+    <div class="container mt-4" >
+ 
+        <h1>Student Table</h1>
+    <table class="table">
+        <thead>     
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Option</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let StudentItem of StudentArray">
+            <td>{{StudentItem.id}}</td>
+            <td>{{StudentItem.name}}</td>
+            <td>{{StudentItem.email }}</td>
+            <td>{{StudentItem.phone }}</td>
+ 
+            <td>
+                <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>
+                <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+ 
+ 
+    </div>
